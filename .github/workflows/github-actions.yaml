@@ -27,11 +27,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/online-shopping-github-actions .
+          docker build -t ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest .
       - name: List Docker images
         run: |
           docker images
       - name: Push Docker image to DockerHub
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/online-shop:latest
+          docker push ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest
 
