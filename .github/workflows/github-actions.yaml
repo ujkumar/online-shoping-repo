@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest .
+          docker build -t ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest ../../Dockerfile
       - name: List Docker images
         run: |
           docker images
