@@ -46,6 +46,21 @@ The **Online Shop** project is a demo e-commerce application designed for Hackat
 - **Linux:** Command-line operations, system administration, and file management.
 - **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
 
+## Run with Docker
+
+Build the production image and run it on Linux without a `-p` port mapping by using the host network:
+
+```bash
+docker build -t online-shop .
+docker run --rm --name online-shop --network host online-shop
+```
+
+Open `http://localhost` in a browser. The Dockerfile exposes port `80` for documentation; `--network host` makes Nginx use the host network directly. This option is intended for Linux hosts. On Docker Desktop, use an explicit mapping instead:
+
+```bash
+docker run --rm --name online-shop -p 8080:80 online-shop
+```
+
 Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
 
 ---
