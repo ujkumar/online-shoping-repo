@@ -19,8 +19,8 @@ jobs:
   DockerBuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v6
+      # - name: Check out repository code
+        # uses: actions/checkout@v6
       - name: login to DockerHub
         uses: docker/login-action@v2
         with:
@@ -34,6 +34,6 @@ jobs:
           docker images
       - name: Push Docker image to DockerHub
         run: |
-          docker tag online-shopping-github-actions ${{ secrets.DOCKER_USERNAME }}/online-shopping-github-actions:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/online-shopping-github-actions:latest
+          docker tag online-shopping-github-actions ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest
+          docker push ${{ secrets.DOCKERHUB_USER }}/online-shopping-github-actions:latest
 
